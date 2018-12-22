@@ -107,4 +107,10 @@ Work out the first ten digits of the sum of the following one-hundred
             53503534226472524250874054075591789781264330331690
 """
 
+import os
 
+path = os.getcwd() + "..\\..\\..\\Data\\013.txt"
+with open(path) as file:
+    numbersShort = [int(line) for line in file]
+    shortSum = sum(numbersShort)
+    print(str(shortSum)[:10])
