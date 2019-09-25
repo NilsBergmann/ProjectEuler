@@ -20,5 +20,18 @@ Which starting number, under one million, produces the longest chain?
 
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
+def next(n):
+    if n % 2 == 0:
+        return n/2
+    else:
+        return 3*n + 1
 
+_MAX = 1_000_000
 
+lengths = {1:1}
+for start in range(1, _MAX):
+    chain = [start]
+    while chain[-1] not in lengths.keys():
+        chain.append(next(chain[-1]))
+
+    lengths[start] = len(chain) + lengths[chain[-1]] - 1

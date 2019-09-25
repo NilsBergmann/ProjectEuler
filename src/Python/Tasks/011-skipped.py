@@ -32,4 +32,29 @@ What is the greatest product of four adjacent numbers in any direction
 (up, down, left, right, or diagonally) in the 20 * 20 grid?
 """
 
+import os
 
+GRID_SIZE = 20
+PATH_LENGTH = 4
+
+def getInput():
+    path = os.getcwd() + "..\\..\\..\\Data\\011.txt"
+    retVal = []
+    with open(path) as file:
+        for line in file:
+            row = []
+            for number in line.split():
+                row.append(int(number))
+            retVal.append(row)
+    return retVal
+
+def solve():
+    data = getInput()
+    for start in range(len(data)):
+        pass
+
+data = getInput()
+for row in data:
+    print(row)
+    for n in row:
+        pass
