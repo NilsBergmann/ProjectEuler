@@ -13,11 +13,12 @@ Find the product abc.
 """
 def isPythagorean(a, b, c):
     return a**2 + b**2 == c**2
-def solve():
-    for a in range(1,1000):
-        for b in range(1,1000 - a):
-            c = 1000 - a - b
+
+def solve(sum):
+    for a in range(1,sum):
+        for b in range(1,sum - a):
+            c = sum - a - b
             if isPythagorean(a,b,c):
                 return a * b * c
 
-print(solve())
+print(solve(1000))
